@@ -1,0 +1,21 @@
+{% extends 'blog/base-no-sidebar.html'%}
+
+{% block title %} Login | Blog By Pradd {%endblock%}
+{% block main %}
+<h2 align="center">Login To Blog </h2>
+
+<br><br>
+<form id="login_form" method="post" action="/blog/login/" role="form">
+{% csrf_token %}
+<div class="form-group">
+<label for="username">Username : </label>
+<input type="text" id="username" class= "form-control" name="username" placeholder="Enter Your Username " />
+</div><br>
+<div class="form-group">
+<label for="password">Password : </label>
+<input type="password" name="password" id="password" class="form-control" placeholder="Enter Your Password" />
+</div><br>
+<input type="submit" class="btn btn-primary" value="Login" />
+</form><br><br>
+<p>{{msg}}</p>
+{%endblock%}

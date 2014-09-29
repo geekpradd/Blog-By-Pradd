@@ -1,0 +1,26 @@
+{% extends 'rango/base.html' %}
+{% block title %} Add Category {%endblock%}
+{% block body_content %}
+<h2>Add Category </h2>
+{% if user.is_authenticated %}
+
+<br>
+<form id="category_form" method="post" action="/rango/add_category/">
+	{% csrf_token %} <!--Important for rendering the form -->
+	{% for hidden in form.hidden_fields %}
+		{{hidden}} <!--Invisible-->
+	{%endfor%}
+	{% for visible in form.visible_fields%}
+		{{visible.errors}}
+		{{visible.help_text}}
+		{{visible}}
+		{%endfor%}
+		<br><br>
+		<input type="submit" value="Create Category" name="submit" />
+		</form>
+		{% else %}
+		 <p>Only Registered Users can create categories. Click the button below to register. </p>
+		 <br>
+		 <input type="button" href="/rango/register/" value="Register" />
+		 {% endif %}
+		 {% endblock %}

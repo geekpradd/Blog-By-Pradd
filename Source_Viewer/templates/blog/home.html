@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+{%block title%}
+Blog By Pradd {%endblock%}
+
+{% block main %}
+<h2 align="center">TheGeekBlog -- By Pradd</h2>
+
+{% if user.is_authenticated %}
+{% if user.username == "Pradd" or user.username == "Pradipta" %}
+ <p>Welcome Master and Admin {{user.username}}! </p>
+ {%else%}
+ <p>Welcome {{user.username}} </p>
+ {%endif%}
+ {% else %}
+ {% endif%}
+{% if posts %}
+    {% for post in posts %}
+        <div class="unit"><h3 ><a style="color:black;font-size:25px;"href="posts/{{post.url}}">{{post.title}} </a></h3> <p style="margin-top:-23px;"> <a  href="/blog/categories/{{post.cat_url}}/"> Category : {{post.category.name}}</a>                         <a style="padding-left:20px;" href="/blog/profile/{{post.author}}"> By {{post.author}} </a> <span style="padding-left:10px;">On {{post.date}}</span> </p>
+                <br><p>{{post.sl}}</p>
+        </div>
+    {%endfor%}
+{%else%}
+    <p>No Posts Currently Available</p>
+
+{% endif %}
+{% endblock %}
+{% block sidebar %}
+<h4 align="center" style="font-weight:lighter;">Categories</h4><br>
+        {% for a in cat %}
+            <p> <a href="/blog/categories/{{a.url}}">{{a.name}} </a> </p>
+        {% endfor %}
+        <br>
+        {% if user.is_authenticated%}
+        <p><a href="/blog/add-category/">Add Category</a></p>
+        {% else %}
+        <p>Please login to create and edit categories</p>
+        {% endif %}
+        {%endblock%}

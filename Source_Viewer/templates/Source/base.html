@@ -1,0 +1,74 @@
+
+
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>{% block title%}{%endblock%}</title>
+<script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="js/bootstrap-select.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/boo.css' %}" />
+
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<!--Custom Styles -->
+</head>
+<body>
+<!--Navigation header-->
+<nav class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="width:100%;" id="headers">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+            <a class="navbar-amin navbar-brand " href="#"><span class="navbars">Source Viewer <span></a>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" >
+            <ul class="nav navbar-nav navbar-right">
+                            <li class="navbar-current"><a href="#" >Home</a></li>
+
+                <li><a href="#" >API</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Documentation</a></li>
+
+
+
+            </ul>
+        </div>
+    <!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav>
+<div class="content col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+<div class="logo-text ">
+
+<h3 class="logo">Source Code Viewer </h3>
+<br>
+<h4 class="sub">Enter The Site whose source code you want to see beautified and on a custom editor.</h4></div>
+<div class="search">
+<center>
+  <form class="form-horizontal">
+  <div class="form-group">
+  <input type="text" name="a" id="a" class="sae form-controlr" placeholder="Site URL"  id="textr">
+  </div>
+<input type="submit" id="f" style="display:none;">
+  </form></center>
+</div><br><br><br>
+<!--Layout for Selection-->
+<div class="col-sm-12 col-md-6">
+<button class="center-block cus btn btn-primary btn-lg" id="bx" type="submit" onclick="$('#f').click">Search</button><br></div>
+</div>
+</span>
+</span>
+</a>

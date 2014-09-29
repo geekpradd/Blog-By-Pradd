@@ -1,0 +1,18 @@
+{% extends 'blog/base.html'%}
+{% block title%}Profile of {{userx.username}}{%endblock%}
+{%block main%}
+<h2 align="center">View Profile {{userx.username}} </h2><br><br>
+
+<p>Username : {{userx.username}} <br><br>
+Email : {{userx.email}} <br><br>
+{% if pr %}
+        <p>Website: <a href="{{ pr.website }}">{{ pr.website }}</a></p>
+        <br/>
+        {% if pr.picture %}
+            <img src="{{ pr.picture.url }}"  />
+        {% endif %}
+    {% endif %}
+    <p>More Information available at his admin page.</p>
+
+    <a class="btn btn-primary" href="/blog/">Go Back</a>
+    {%endblock%}

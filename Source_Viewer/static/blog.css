@@ -1,0 +1,37 @@
+p {
+font-family: 'Segoe UI', sans-serif;
+font-size: 17px;
+line-height: 1.5;
+padding: 8px 5px 14px 5px;
+}
+ol{
+
+}
+h2{
+font-family: 'Segoe UI', sans-serif;
+font-size: 30px;
+line-height: 1.1;
+padding: 8px 5px 14px 5px;
+}
+h3{
+font-family: 'Segoe UI', sans-serif;
+font-size: 25px;
+line-height: 1.1;
+padding: 9px 5px 14px 5px;
+}
+h4{
+font-family: 'Segoe UI', sans-serif;
+font-size: 21px;
+line-height: 1.1;
+padding: 9px 5px 14px 5px;
+}
+body{
+
+}
+.jumbotron{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right:4%;
+	position: fixed;
+	height: 100%;
+}

@@ -1,0 +1,25 @@
+{% extends 'rango/base.html' %}
+{% block title %}Category - {{category}} {%endblock%}
+{% block body_content %}
+{% if category %}
+		<h2 align="center">Category - {{category}} </h2>
+		{% if pages %}
+			{% for page in pages %}
+				<ul>
+					<li><a href="{{page.url}}">{{page.title}}</a></li>
+					</ul>
+			{% endfor %}
+
+		{% else %}
+			<p>There are no pages in current category - {{category}} </p>
+		{%endif%}
+
+		<p> Add Pages To The Category : </p> <br>
+		<a href="/rango/category/{{category_name_url}}/add_page/">Add Page</a>
+	{% else %}
+		<p>The Category {{category}} does not exist </p>
+
+	{%endif%}
+	<br><br>
+	<p><a href="../../">&lt; Back </a></p>
+	{%endblock%}

@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% block title %}Add Page - {{cat_name}} {% endblock %}
+{% block main %}
+ <h2 align="center">Add Page - {{cat_name}} </h2>
+ <br>
+ <form method="post" action="/blog/categories/{{urls}}/add-post/" id="cat_form">
+ {% csrf_token %}
+
+ 	{% for a in form.visible_fields %}
+ 	<div class="form-group">
+ 	{{a.errors}}<br>
+
+ 	<label for="x">{{a.help_text}}<br></label>
+ 	{{a}}<br><br>
+ 	</div>
+ 	{%endfor%}
+
+
+ 	<input class="btn btn-primary" type="submit" name="submit" value="Submit" />
+ 	</form>
+ 	{%endblock%}
+ 	{%block sidebar%}
+ 	<p align="center">Categories</p><br>
+        {% for a in cat %}
+            <p> <a href="/blog/categories/{{a.url}}">{{a.name}} </a> </p>
+        {% endfor %}
+        <br>
+        <p><a href="/blog/add-category/">Add Category</a></p>
+        {%endblock%}

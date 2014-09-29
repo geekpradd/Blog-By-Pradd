@@ -1,0 +1,116 @@
+html, body {
+    max-width: 100%;
+font-size: 17px;
+line-height: 1.5;
+padding: 8px 5px 14px 5px;
+font-family: 'Open Sans', sans-serif;
+font-size: 17px;
+line-height: 1.5;
+padding: 8px 5px 14px 5px;
+    
+}
+a{
+	color: #428BCA;
+text-decoration: none;
+}
+	body {
+		background-image: url("../back.jpg");
+		background-repeat: repeat;
+		}
+	h1 {font-size:20px;}
+	h3{
+font-size: 18px;
+line-height: 1.1;
+padding: 9px 5px 14px 5px;
+	}
+	.mainContent {
+		width: 50%;
+		margin:0px auto; /* Right and left margin widths set to "auto" */
+		text-align:center; /* Counteract to IE5/Win Hack */
+		border:0px;
+		width:400px;
+		}
+
+	.logo {
+		
+		width:360px;
+		padding:20px;
+		background-color:#FFFFFF;
+		text-align:center;
+		}
+	.useragent{
+		
+		font-size:14px;
+		
+		width:360px;
+		padding:20px;
+		background-color:#FFFFFF;
+		text-align:center;
+	}
+	.ip{
+		
+		font-size:14px;
+		
+		width:360px;
+		padding:20px;
+		background-color:#FFFFFF;
+		text-align:center;
+	}
+	@media (max-width: 1080px){
+
+		
+	}
+	#browser{
+	}
+	#version{
+
+	}
+	#agent{
+	}
+	#os{
+	}
+	.logo span {
+		}
+	.resolution {
+		background-color: #fff;
+		text-align:center;
+		width:340px;
+		padding:20px;
+		border:#FFFFFF solid 10px;
+		margin-top:10px;
+		font-size:27px;
+		line-height:40px;
+		}
+	.resolution span{
+		display:block;
+		font-size:55px;
+		text-transform:lowercase;
+		color: #2CE62F;
+		}
+	.sk {
+		width:360px;
+		padding:20px;
+		background-color:#FFFFFF;
+		text-align:center;
+		margin-top:10px;
+		font-size:13px;
+		line-height:15px;
+		
+	}
+	@media (max-width: 1081px){
+		
+	}
+	@media (min-width: 768px) and (max-width: 991px) {
+		
+		html , body{
+			margin: auto auto;
+		}
+	}
+	.box{
+		
+
+	}
+	#headingx{
+		color: #00B503;
+	}
+	

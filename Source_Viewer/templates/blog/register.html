@@ -1,0 +1,21 @@
+{% extends 'blog/base-register.html' %}
+{% block title %}Register | Blog {%endblock%}
+{%block main%}
+	<h2 align="center">Register For Blog By Pradd</h2>
+{% if registration %}
+	<p>Thank you for registering. Click here to <a href="/blog/login">login </a>.</p>
+
+{% else %}
+	<br>
+	<form method="post" id="register_form" action="/blog/register/" enctype="multipart/form-data">
+	{% csrf_token %}
+		{{ user_form.as_p}}
+		<br>
+		{{profile_form.as_p}}
+<br><br><input type="submit" value="Register" name="submit" class="btn btn-primary" /></form><br><br>
+
+{%endif%}
+{%endblock%} 
+
+
+	

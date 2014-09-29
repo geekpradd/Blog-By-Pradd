@@ -1,0 +1,12 @@
+body{
+	margin: 40px auto;
+	width: 700px;
+	font-family: "Segoe UI"
+
+}
+h2{
+	font-weight:lighter
+}
+p{
+	font-size:17px
+}

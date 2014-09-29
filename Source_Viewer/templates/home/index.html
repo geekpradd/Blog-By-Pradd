@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+{% load static %} <!--Loading the static for Django - You won't see it in the source offcourse-->
+<html>
+<head>
+<title>Welcome To Rango</title>
+<link rel="stylesheet" type="text/css" href=" {% static 'css/main.css' %}" />
+</head>
+<body>
+<h2 align="center">{{head}}</h2>
+<p>{{main}}</p>
+
+<p>Go To Rango By Clicking the Button below : </p>
+<a href="/rango/">Rango</a>
+</body>
+</html>

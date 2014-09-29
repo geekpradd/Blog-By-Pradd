@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% block title %} {{url}} {%endblock%}
+{% block sidebar %}
+<p align="center">Categories</p><br>
+        {% for a in cat %}
+            <p> <a href="/blog/categories/{{a.url}}">{{a.name}} </a> </p>
+        {% endfor %}
+        <br>
+        {% if user.is_authenticated%}
+        <p><a href="/blog/add-category/">Add Category</a></p>
+        {% else %}
+        <p>Please login to create and edit categories</p>
+        {% endif %}
+        {%endblock%}
+        {% block main %}
+        <h2 align="center">{{url}} </h2>
+
+        {% if user.username == post.author or user.username == "Pradd" or user.username == "Pradipta" %}
+        <p><a href="/blog/posts/{{link}}/delete/">Delete</a> <span style="padding-left:20px;"><a href="/blog/posts/{{link}}/edit/">Edit Post</a></span><span style="padding-left:20px;"><a href='/blog/profile/{{post.author}}'>By {{post.author}} </a></span></p>
+        
+        {%endif%}
+{% if post %}
+    <p>{{post.content}}</p>
+{%else%}
+    <p>No Posts titled {{url}} Currently Available</p>
+
+{% endif %}
+<p><a class="btn btn-primary" href="../../">&lt; Back </a></p><br>
+
+{%endblock%}

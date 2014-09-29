@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% block title %}Edit Post - {{name}} {%endblock%}
+{%block main%}
+{% if exist%}
+	<h2 align="center">Edit Post - {{name}}</h2><br><br>
+	<form method="post" action="/blog/posts/{{url}}/edit/" id="edit-form" role="form">
+	{% csrf_token %}
+	<div class="form-group">
+	<label for="title">Enter The Title</label>
+	<input type="text" value="{{sin.title}}"class="form-control"  id="title" name="title"></div><br>
+	<div class="form-group">
+	<label for="content">Enter Content Here : </label>
+	<textarea rows="14" class="form-control" name="content" id="content">{{sin.content}}</textarea></div><br>
+
+	<input type="submit" name="submit" class="btn btn-primary" value="Submit" />
+	</form>
+{% else %}
+	<h2 align="center">Error </h2>
+	<p>The Post {{name}} does not exist. Please check the URL. </p>
+
+{%endif%}
+{%endblock%}
+{% block sidebar %}
+<p align="center">Categories</p><br>
+        {% for a in cat %}
+            <p> <a href="/blog/categories/{{a.url}}">{{a.name}} </a> </p>
+        {% endfor %}
+        <br>
+        {% if user.is_authenticated%}
+        <p><a href="/blog/add-category/">Add Category</a></p>
+        {% else %}
+        <p>Please login to create and edit categories</p>
+        {% endif %}
+        {%endblock%}

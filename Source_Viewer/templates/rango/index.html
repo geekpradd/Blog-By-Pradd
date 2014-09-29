@@ -1,0 +1,37 @@
+{% extends 'rango/base.html' %}
+{%block title %} {{title}} {% endblock%}
+{% block body_content %}
+<h2 align='center'>{{head}}</h2>
+	<br>
+	{% if user.is_authenticated %}
+	<p style="font-size:21px;">Welcome {{user.username}} </p>
+	{% else %}
+	<p></p>
+	{% endif %}
+ {% if categories %}
+ 		<ul>
+ 			{% for category in categories %}
+ 			<a href="category/{{category.url}}"><li>{{ category.name }}</a> -- Likes : {{category.like}}</li>
+ 			
+ 			{% endfor %}
+ 		</ul>
+ 	{% else %}
+ 			<strong>No Categories</strong>
+ 			{% endif %}
+
+
+<br><br>
+{% if user.is_authenticated %}
+<a href="/rango/add_category">Create A Category </a><br><br>
+	<a href="/rango/logout/">Logout</a>
+{% else %}
+ <a href="/rango/register/">Register </a><br> <a href="/rango/login/">Login</a>
+{% endif %}
+
+
+
+
+<br><br><br><br>
+ <div style="position:relative;bottom:0px;border-top:1px solid #eee;">
+ <p>Created By GeekPradd using Django</p></div>
+ {%endblock%}

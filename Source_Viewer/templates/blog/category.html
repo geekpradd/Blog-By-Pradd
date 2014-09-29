@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+{% block sidebar %}
+<p align="center">Categories</p><br>
+        {% for a in cat %}
+            <p> <a href="/blog/categories/{{a.url}}">{{a.name}} </a> </p>
+        {% endfor %}
+        <br>
+        {% if user.is_authenticated%}
+        <p><a href="/blog/add-category/">Add Category</a></p>
+        {% else %}
+        <p>Please login to create and edit categories</p>
+        {% endif %}
+        {%endblock%}
+
+        
+        {%block main%}
+        <h2 align="center">Category -- {{name}}</h2>
+{% if category %}
+    {% if pots %}
+        <p align="center">Posts in {{name}} : </p><br>
+        <ol style="font-family: 'Segoe UI', sans-serif;
+    font-size: 17px;
+line-height: 1.5;
+padding: 8px 5px 14px 5px;">
+            {% for pot in pots %}
+                <li><a href="../../posts/{{pot.url}}">{{pot.title}}</a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>No Posts in this category </p>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <p><a href="/blog/categories/{{url}}/add-post/">Add Post</a></p>
+    {% else %}
+    <p>Please login or register to create posts.</p>
+
+    {% endif %}
+
+{% else %}
+    <p> The Category {{name}} does not exist. </p>
+    {%endif%}
+    {%endblock%}
+    {% block title %} Category {{name}} {%endblock%}
